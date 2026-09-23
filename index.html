@@ -6,15 +6,41 @@
 <title>Flyers, TikTok Ads & AI Videos | From ₦2,000</title>
 <meta name="description" content="Get professional flyer design, TikTok advertising help, and AI video creation. Services start from ₦2,000.">
 <script>
-!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)));};};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,n);return e};ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=r;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript";n.async=true;n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e);};ttq.load("DAGKJTJC77U3EU7G78H0");ttq.page();}(window,document,"ttq");
+!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)));};};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq.methods[i]);ttq.instance=function(t){for(var e=w.ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,n);return e};ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=r;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript";n.async=true;n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e);};ttq.load("DAGKJTJC77U3EU7G78H0");ttq.page();}(window,document,"ttq");
 </script>
 <script>
+const FUNNEL_NAME="Flyer Design, TikTok Ads & AI Video Services";
 function trackTikTokEvent(eventName,properties){if(window.ttq&&typeof window.ttq.track==="function")window.ttq.track(eventName,properties||{});}
-function trackWhatsAppClick(buttonName){trackTikTokEvent("Contact",{content_name:"Flyer Design, TikTok Ads & AI Video Services",content_type:"service",button_name:buttonName,destination:"WhatsApp",value:2000,currency:"NGN"});}
-window.addEventListener("load",function(){trackTikTokEvent("ViewContent",{content_name:"Flyer Design, TikTok Ads & AI Video Services",content_type:"service",value:2000,currency:"NGN"});});
+function trackFunnelActivity(activity,details){
+ trackTikTokEvent("FunnelActivity",{funnel:FUNNEL_NAME,activity:activity,details:details||"",page:location.href});
+}
+function trackWhatsAppClick(buttonName){
+ trackTikTokEvent("Contact",{content_name:FUNNEL_NAME,content_type:"service",button_name:buttonName,destination:"WhatsApp",value:2000,currency:"NGN"});
+ trackTikTokEvent("ClickButton",{button_name:buttonName,destination:"WhatsApp",funnel:FUNNEL_NAME});
+ trackFunnelActivity("whatsapp_click",buttonName);
+}
+window.addEventListener("load",function(){
+ trackTikTokEvent("ViewContent",{content_name:FUNNEL_NAME,content_type:"service",value:2000,currency:"NGN"});
+ trackFunnelActivity("landing_page_view");
+});
+document.addEventListener("DOMContentLoaded",function(){
+ document.querySelectorAll(".service-card").forEach(function(card){
+  card.addEventListener("click",function(){trackFunnelActivity("service_interest",card.dataset.service);});
+ });
+ document.querySelectorAll("details").forEach(function(item){
+  item.addEventListener("toggle",function(){if(item.open)trackFunnelActivity("faq_open",item.querySelector("summary").textContent.trim());});
+ });
+ let milestones=[25,50,75,90],sent={};
+ window.addEventListener("scroll",function(){
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  if(max<=0)return;
+  const percent=Math.round((window.scrollY/max)*100);
+  milestones.forEach(function(m){if(percent>=m&&!sent[m]){sent[m]=true;trackFunnelActivity("scroll_depth",m+"%");}});
+ });
+});
 </script>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#080808;color:#fff;line-height:1.5}.wrap{max-width:1000px;margin:auto;padding:0 20px}.hero{text-align:center;padding:70px 20px;background:radial-gradient(circle at top,#252525,#080808 60%)}.badge{display:inline-block;padding:8px 14px;border:1px solid #444;border-radius:30px;font-size:13px}h1{font-size:clamp(42px,8vw,76px);line-height:.98;letter-spacing:-3px;margin:25px auto 18px;max-width:850px}h1 span{color:#ff3157}.sub{max-width:720px;margin:auto;color:#ccc;font-size:19px}.price{font-size:48px;font-weight:900;margin:25px 0 5px}.btn{display:inline-block;background:#ff3157;color:#fff;text-decoration:none;font-weight:800;padding:17px 28px;border-radius:12px;margin:18px 6px;font-size:18px}.note{color:#999;font-size:13px}section{padding:65px 0}.dark{background:#101010}.title{text-align:center;font-size:40px;margin:0 0 12px}.lead{text-align:center;color:#aaa;max-width:700px;margin:0 auto 35px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#171717;border:1px solid #292929;border-radius:18px;padding:25px}.icon{font-size:30px}.card h3{margin:10px 0 5px}.card p{color:#aaa;margin:0}.offer{max-width:760px;text-align:center}.offer ul{list-style:none;text-align:left;max-width:550px;margin:30px auto;padding:0}.offer li{padding:9px 0}.offer li:before{content:"✓";color:#ff3157;font-weight:bold;margin-right:10px}details{background:#151515;border:1px solid #292929;border-radius:12px;padding:16px;margin:10px 0}summary{font-weight:bold;cursor:pointer}details p{color:#aaa}footer{text-align:center;color:#777;padding:30px 20px;font-size:13px}@media(max-width:700px){.grid{grid-template-columns:1fr}.hero{padding:55px 20px}h1{letter-spacing:-2px}.title{font-size:34px}}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#080808;color:#fff;line-height:1.5}.wrap{max-width:1000px;margin:auto;padding:0 20px}.hero{text-align:center;padding:70px 20px;background:radial-gradient(circle at top,#252525,#080808 60%)}.badge{display:inline-block;padding:8px 14px;border:1px solid #444;border-radius:30px;font-size:13px}h1{font-size:clamp(42px,8vw,76px);line-height:.98;letter-spacing:-3px;margin:25px auto 18px;max-width:850px}h1 span{color:#ff3157}.sub{max-width:720px;margin:auto;color:#ccc;font-size:19px}.price{font-size:48px;font-weight:900;margin:25px 0 5px}.btn{display:inline-block;background:#ff3157;color:#fff;text-decoration:none;font-weight:800;padding:17px 28px;border-radius:12px;margin:18px 6px;font-size:18px}.note{color:#999;font-size:13px}section{padding:65px 0}.dark{background:#101010}.title{text-align:center;font-size:40px;margin:0 0 12px}.lead{text-align:center;color:#aaa;max-width:700px;margin:0 auto 35px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#171717;border:1px solid #292929;border-radius:18px;padding:25px;cursor:pointer}.icon{font-size:30px}.card h3{margin:10px 0 5px}.card p{color:#aaa;margin:0}.offer{max-width:760px;text-align:center}.offer ul{list-style:none;text-align:left;max-width:550px;margin:30px auto;padding:0}.offer li{padding:9px 0}.offer li:before{content:"✓";color:#ff3157;font-weight:bold;margin-right:10px}details{background:#151515;border:1px solid #292929;border-radius:12px;padding:16px;margin:10px 0}summary{font-weight:bold;cursor:pointer}details p{color:#aaa}footer{text-align:center;color:#777;padding:30px 20px;font-size:13px}@media(max-width:700px){.grid{grid-template-columns:1fr}.hero{padding:55px 20px}h1{letter-spacing:-2px}.title{font-size:34px}}
 </style>
 </head>
 <body>
@@ -30,9 +56,9 @@ window.addEventListener("load",function(){trackTikTokEvent("ViewContent",{conten
 <h2 class="title">What I Can Do For You</h2>
 <p class="lead">Simple, creative digital services for your business, brand, event, or personal project.</p>
 <div class="grid">
-<div class="card"><div class="icon">🎨</div><h3>Professional Flyers</h3><p>Clean, eye-catching flyer designs that make your business, event, or brand stand out.</p></div>
-<div class="card"><div class="icon">📱</div><h3>TikTok Adverts</h3><p>Get your business in front of more people with TikTok advertising support.</p></div>
-<div class="card"><div class="icon">🤖</div><h3>AI Video Generation</h3><p>Create engaging AI-generated videos without needing to record everything yourself.</p></div>
+<div class="card service-card" data-service="Professional Flyers"><div class="icon">🎨</div><h3>Professional Flyers</h3><p>Clean, eye-catching flyer designs that make your business, event, or brand stand out.</p></div>
+<div class="card service-card" data-service="TikTok Adverts"><div class="icon">📱</div><h3>TikTok Adverts</h3><p>Get your business in front of more people with TikTok advertising support.</p></div>
+<div class="card service-card" data-service="AI Video Generation"><div class="icon">🤖</div><h3>AI Video Generation</h3><p>Create engaging AI-generated videos without needing to record everything yourself.</p></div>
 </div>
 </div></section>
 <section><div class="wrap">

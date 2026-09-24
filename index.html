@@ -6,17 +6,26 @@
 <title>Flyers, TikTok Ads & AI Videos | From ₦2,000</title>
 <meta name="description" content="Get professional flyer design, TikTok advertising help, and AI video creation. Services start from ₦2,000.">
 <script>
+window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script>
 !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)));};};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq.methods[i]);ttq.instance=function(t){for(var e=w.ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,n);return e};ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=r;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript";n.async=true;n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e);};ttq.load("DAGKJTJC77U3EU7G78H0");ttq.page();}(window,document,"ttq");
 </script>
 <script>
 const FUNNEL_NAME="Flyer Design, TikTok Ads & AI Video Services";
 function trackTikTokEvent(eventName,properties){if(window.ttq&&typeof window.ttq.track==="function")window.ttq.track(eventName,properties||{});}
+function trackVercelEvent(name,data){if(typeof window.va==="function")window.va("event",{name:name,data:data||{}});}
 function trackFunnelActivity(activity,details){
- trackTikTokEvent("FunnelActivity",{funnel:FUNNEL_NAME,activity:activity,details:details||"",page:location.href});
+ const data={funnel:FUNNEL_NAME,activity:activity,details:details||"",page:location.href};
+ trackTikTokEvent("FunnelActivity",data);
+ trackVercelEvent(activity,data);
 }
 function trackWhatsAppClick(buttonName){
+ const data={funnel:FUNNEL_NAME,button:buttonName,destination:"WhatsApp",value:2000,currency:"NGN"};
  trackTikTokEvent("Contact",{content_name:FUNNEL_NAME,content_type:"service",button_name:buttonName,destination:"WhatsApp",value:2000,currency:"NGN"});
  trackTikTokEvent("ClickButton",{button_name:buttonName,destination:"WhatsApp",funnel:FUNNEL_NAME});
+ trackVercelEvent("whatsapp_click",data);
  trackFunnelActivity("whatsapp_click",buttonName);
 }
 window.addEventListener("load",function(){
